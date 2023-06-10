@@ -20,6 +20,9 @@ var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
+app.MapGet("/version", () => {
+    return $"Running on {System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription}";
+});
 
 app.MapGet("/weatherforecast", () =>
 {
